@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Jan 05, 2021 at 12:11 AM
+- Server version: 10.1.37-MariaDB
+- PHP Version: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="php_project1" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="inventory">
+                CREATE TABLE `inventory` (
+                  `productID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(50) NOT NULL,
+                  `description` varchar(1000) DEFAULT NULL,
+                  `specification` varchar(1000) NOT NULL,
+                  `categoryID` int(10) unsigned NOT NULL,
+                  `imageFile` varchar(50) DEFAULT NULL,
+                  `colour` varchar(20) DEFAULT NULL,
+                  `warranty` varchar(10) DEFAULT NULL,
+                  `unitPrice` decimal(10,2) NOT NULL,
+                  `onHand` int(10) unsigned NOT NULL,
+                  PRIMARY KEY (`productID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="orders">
+                CREATE TABLE `orders` (
+                  `order_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `first_name` varchar(40) NOT NULL,
+                  `last_name` varchar(40) NOT NULL,
+                  `payment` varchar(10) NOT NULL,
+                  `order_product` varchar(40) NOT NULL,
+                  `quantity` int(10) unsigned NOT NULL,
+                  PRIMARY KEY (`order_id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+</pma_xml_export>
